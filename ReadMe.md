@@ -1,5 +1,6 @@
 * [UIKit](#uikit)
     * [Live Rendering in Storyboards](#how-could-you-setup-live-rendering)
+    * [Ways of specifing the layout of elements](#ways-of-specifing-the-layout-of-elements)
 
 
 # UIKit
@@ -37,4 +38,18 @@ To mark a custom view as `IBDesignable`, prefix the class name with `@IBDesignab
 class MyCustomView: UIView {
     ...
 }
+```
+
+
+## Ways of specifing the layout of elements
+
+Here are a few common ways to specify the layout elements in a UIView:
+
+- Using `Interface Builder`, you can add a `XIB file` to your project, layout elements within it, and then load the XIB in your application code (either automatically, based on naming conventions, or manually).
+Also, using InterfaceBuilder you can create a storyboard for your application.
+- You can write your own code to use NSLayoutConstraints to have elements in a view arranged by Auto Layout.
+
+- You can create CGRects describing the exact coordinates for each element and pass them to UIView's 
+```objectivec
+    -(id)initWithFrame:(CGRect)frame method.
 ```
