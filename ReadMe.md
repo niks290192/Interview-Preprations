@@ -1,6 +1,7 @@
 * [UIKit](#uikit)
     * [Live Rendering in Storyboards](#how-could-you-setup-live-rendering)
     * [Ways of specifing the layout of elements](#ways-of-specifing-the-layout-of-elements)
+    * [Autolayout formula](#formula-of-autolayout)
 
 
 # UIKit
@@ -53,3 +54,6 @@ Also, using InterfaceBuilder you can create a storyboard for your application.
 ```objectivec
     -(id)initWithFrame:(CGRect)frame method.
 ```
+
+## Formula of Autolayout
+<img src = "/Resources/Articles/Autolayout.png">
