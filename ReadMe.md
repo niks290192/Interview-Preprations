@@ -2,6 +2,7 @@
     * [Live Rendering in Storyboards](#how-could-you-setup-live-rendering)
     * [Ways of specifing the layout of elements](#ways-of-specifing-the-layout-of-elements)
     * [Autolayout formula](#formula-of-autolayout)
+    * [Size Classes](#size-classes)
 
 
 # UIKit
@@ -57,3 +58,14 @@ Also, using InterfaceBuilder you can create a storyboard for your application.
 
 ## Formula of Autolayout
 <img src = "/Resources/Articles/Autolayout.png">
+
+## Size Classes
+A size class is a new technology used by iOS to allow you to custom your app for a given device class, based on its orientation and screen size.
+
+There are presently four classes:
+- Horizontal Regular
+- Horizontal Compact
+- Vertical Regular
+- Vertical Compact
+
+<img src = "/Resource/Articles/Size%20Classes.png">
