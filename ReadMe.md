@@ -68,4 +68,4 @@ There are presently four classes:
 - Vertical Regular
 - Vertical Compact
 
-<img src = "/Resource/Articles/Size%20Classes.png">
+<img src = "/Resources/Articles/Size%20Classes.png">
