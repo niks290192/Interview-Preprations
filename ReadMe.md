@@ -3,6 +3,7 @@
     * [Ways of specifing the layout of elements](#ways-of-specifing-the-layout-of-elements)
     * [Autolayout formula](#formula-of-autolayout)
     * [Size Classes](#size-classes)
+    * [Intrinsic Content Size](#intrinsic-content-size)
 
 
 # UIKit
@@ -69,3 +70,8 @@ There are presently four classes:
 - Vertical Compact
 
 <img src = "/Resources/Articles/Size%20Classes.png">
+
+## Intrinsic Content Size
+The Intrinsic Content Size is one of the most powerful features you gain when you opt-in to using Auto Layout to describe your interfaces. When a view has an intrinsic content size, it is promising Auto Layout that it will have a predefined size that the engine can use to calculate and lay out its views.
+
+<center><img src = "/Resources/Articles/Intrisic%20Content%20Size.png" width="500"></center>
