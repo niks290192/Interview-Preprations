@@ -4,6 +4,10 @@
     * [Autolayout formula](#formula-of-autolayout)
     * [Size Classes](#size-classes)
     * [Intrinsic Content Size](#intrinsic-content-size)
+    * [Frame and bounds](#whats-the-difference-between-the-frame-and-the-bounds)
+    * [When bounds origin will be different form 0,0?](#when-bounds-origin-will-be-different-from-00)
+    * [What do layer object represent?](#what-are-layer-object-and-what-do-they-represent)
+
 
 
 # UIKit
@@ -75,3 +79,16 @@ There are presently four classes:
 The Intrinsic Content Size is one of the most powerful features you gain when you opt-in to using Auto Layout to describe your interfaces. When a view has an intrinsic content size, it is promising Auto Layout that it will have a predefined size that the engine can use to calculate and lay out its views.
 
 <center><img src = "/Resources/Articles/Intrisic%20Content%20Size.png" width="500"></center>
+
+## What's the difference between the frame and the bounds?
+`The bounds` of an UIView is the rectangle, expressed as a location(x, y) and size (width, height) relative to its own coordinate system (0,0) `The frame` of an UIView is the rectangle, expressed as a location(x, y) and size(width, height) relative to the superview it is contained within. 
+
+<center><img src = "/Resource/Articles/Frame-Bounds.png"></center>
+
+## When bounds origin will be different from 0,0?
+
+Let's take an example of `UIScrollView`:
+UIScrollView's bounds.origin will not be (0, 0) when its contentOffset is not (0, 0).
+
+# What are layer objects and what do they represent?
+`Layer objects` are data objects when represents visual content. Layer objects are used by views to render their content. Custom layer objects can also be added to the interface to implement complex animations and other types of sophisticated visual effects. 
