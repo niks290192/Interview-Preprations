@@ -7,6 +7,8 @@
     * [Frame and bounds](#whats-the-difference-between-the-frame-and-the-bounds)
     * [When bounds origin will be different form 0,0?](#when-bounds-origin-will-be-different-from-00)
     * [What do layer object represent?](#what-are-layer-object-and-what-do-they-represent)
+    * [File owner meaning](#file-owner)
+    * [Life Cycle of App](#app-life-cycle)
 
 
 
@@ -83,7 +85,7 @@ The Intrinsic Content Size is one of the most powerful features you gain when yo
 ## What's the difference between the frame and the bounds?
 `The bounds` of an UIView is the rectangle, expressed as a location(x, y) and size (width, height) relative to its own coordinate system (0,0) `The frame` of an UIView is the rectangle, expressed as a location(x, y) and size(width, height) relative to the superview it is contained within. 
 
-<center><img src = "/Resource/Articles/Frame-Bounds.png"></center>
+<center><img src = "/Resources/Articles/Frame-Bounds.png"></center>
 
 ## When bounds origin will be different from 0,0?
 
@@ -92,3 +94,32 @@ UIScrollView's bounds.origin will not be (0, 0) when its contentOffset is not (0
 
 # What are layer objects and what do they represent?
 `Layer objects` are data objects when represents visual content. Layer objects are used by views to render their content. Custom layer objects can also be added to the interface to implement complex animations and other types of sophisticated visual effects. 
+
+## File owner
+
+Two points to be remembered:
+
+- The File owner is the object that loads the nib, i.e. that object which recieves the message `loadNibNamed:` or `initWIthNibName:`.
+- If you want to access any objects in the nib after loading it, you can set an outlet in the file owner. 
+
+So you created a fancy view with lots of button, subviews etc. If you want to modify any of these views / objects any time after loading the nib FROM the loading objects (usually a view or window controller) you set outlets for these objects to the file owner. It's that simple. 
+
+This is the reason why by default all View Controller of Window Controllers act as file owners, and also have an outlet to the main window or view object in the nib file: because duh, if you're controlling something you'll definitely need to have an outlet to it so that you can send messages to it. 
+
+The reason it's called file owner and given a special place, is because unlike the other objects in the nib, the file owner is external to the nib and is not part of it. In fact, it only becomes available when the nib is loaded. So the file owner is a stand-in or proxy for the actual object which will later load the nib. 
+
+## App Life Cycle
+
+application:willFinishLaunchWithOptions:- This method is your app's first chance to excute code at launch time. 
+
+application:didFinishLaunchingWithOptions:- This method allows you to perform any final initialization before your app is displayed to the user. 
+
+applicationDidBecomeActive:-Lets your app know that it is about to become the foreground app. Use this method for any last minute perpration. 
+
+applicationWillResignActive:- Lets you know that your app is transitioning away from being the foreground app. Use this method to put your app into a quiescent state. 
+
+applicationDidEnterBacground:- Lets you know that your app is now running in the background and may be suspended at any time. 
+
+applicationWillEnterForeground:- Lets you know that your app is moving out of the background and back into foreground, but that it is not yet active. 
+
+applicationWillTerminate:- Lets you know that your app is being terminated. This method is not called if your app is suspended. 
