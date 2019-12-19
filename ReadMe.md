@@ -11,6 +11,14 @@
     * [Life Cycle of App](#app-life-cycle)
 
 
+* [Testing](#testing)
+    * [Test types](#testing)
+        * [Unit Tests](#unit-tests)
+        * [Integration Tests](#integration-tests)
+        * [Functional Tests](#functional-tests)
+        * [Acceptance Tests](#acceptance-tests)
+
+
 
 # UIKit
 
@@ -123,3 +131,19 @@ applicationDidEnterBacground:- Lets you know that your app is now running in the
 applicationWillEnterForeground:- Lets you know that your app is moving out of the background and back into foreground, but that it is not yet active. 
 
 applicationWillTerminate:- Lets you know that your app is being terminated. This method is not called if your app is suspended. 
+
+
+# Testing
+
+### Unit Tests
+Tests the smallest unit of functionality, typically a method/function (e.g. given a class with a particular state, calling x method on the class should cause y to happen). Unit tests should be focussed on one particular feature (e.g., calling the pop method when the stack is empty should throw an InvalidOperationException). Everything it touches should be done in memory;
+this means that the test code and the code under test shouldn't:
+
+1. Call out into(non-trivial) collaborators
+2. Access the network
+3. Hit a database
+4. Use the file system
+5. Spin up a thread
+
+Any kind of dependency that is slow/hard to understand / initialize / manipulate should be stubbed / mocked / whatevered using the appropriate techniques so you can focus on what the unit of code is doing, not what its dependencies do. 
+In short, unit tests are as simple as possible, easy to debug, reliable(due to reduced external factors), fast to execute and help to prove that the smallest building blocks of your program function as intended before they're put together. The caveat is that, although you can prove they work perfectly in isolation, the units of code may blow up when combined which brings us to ...
