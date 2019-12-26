@@ -172,7 +172,7 @@ The advantage is that the tests are described in plain english and ensures the s
 
 Also, in agile software development, user acceptance testing involves creating tests to mirror the user stories created by/for the software's customer during development. If the tests pass, it means the software should meet the customer's requirements and the stories can be considered complete. An acceptance test suite is basically an executable specification written in a domain specific language that describes the tests in the language used by the users of the system. 
 
-## What us the benefit writing tests in iOS apps?
+## What is the benefit writing tests in iOS apps?
 Tests gives us a clear perspective on the API design, by getting into the mindset of being a client of the API before it exists. 
 Good tests serve as great documentation of expected behavior. 
 It gives us confidence to constantly refactor our code because we know that if we break anything our tests fail. 
