@@ -17,6 +17,9 @@
         * [Integration Tests](#integration-tests)
         * [Functional Tests](#functional-tests)
         * [Acceptance Tests](#acceptance-tests)
+    * [Writing tests for iOS apps](#what-is-the-benefit-writing-tests-in-ios-apps)
+    * ["Arrange-Act-Assert"](#please-explain-arrange-act-assert)
+
 
 
 
@@ -168,3 +171,17 @@ Standard acceptance testing involves performing tests on the full system (e.g. u
 The advantage is that the tests are described in plain english and ensures the software, as a whole, is feature complete. The disadvantage is that you've moved another level up the testing pyramid. Acceptance tests touch mountains of code, so tracking down a failure can be tricky. 
 
 Also, in agile software development, user acceptance testing involves creating tests to mirror the user stories created by/for the software's customer during development. If the tests pass, it means the software should meet the customer's requirements and the stories can be considered complete. An acceptance test suite is basically an executable specification written in a domain specific language that describes the tests in the language used by the users of the system. 
+
+## What us the benefit writing tests in iOS apps?
+Tests gives us a clear perspective on the API design, by getting into the mindset of being a client of the API before it exists. 
+Good tests serve as great documentation of expected behavior. 
+It gives us confidence to constantly refactor our code because we know that if we break anything our tests fail. 
+If test are hard to write its usually a sign architecture coukd be improved. 
+Following RGR (Red - Green - Refactor) helps you to make improvements early on. 
+
+## Please explain "Arrange-Act-Assert"
+AAA is a pattern for arranging and formatting code in Unit Tests. If we were to write XCTests each of our tests would group these functional sections, 
+separated by blank lines:
+Arrange all necessary preconditions and inputs. 
+Act on the object or method under test. 
+Assert that the expected results have occurred. 
